@@ -5,8 +5,7 @@
  .grid-container {
      display: grid;
      grid-template-columns: repeat(8, 1fr);
-     grid-template-rows: repeat(8, 1fr);
-    
+     grid-template-rows: repeat(auto-fill, 50px) 150px;
 
      grid-column-gap: 30px;
      margin: 0 5vw 0;
@@ -43,7 +42,7 @@
      font-weight: 700;
      font-size: 34px;
      line-height: 39px;
-     padding-top: 5vw;
+     padding-top: 0vw;
 
      color: #FDAD11;
 
@@ -62,7 +61,7 @@
     display: flex;
     grid-column: 2fr 1fr;
     height: 48px;
-    padding-top: 3vw;
+    padding-top: 0vw;
     gap: 2vw;
  }
 
@@ -192,6 +191,7 @@
     border: 3px solid #000000;
     box-shadow: 4px 4px 0px #000000;
     border-radius: 20px;
+    
 
  }
 
@@ -279,6 +279,7 @@
      background: #FB1826;
      border: 3px solid #000000;
      box-shadow: 4px 4px 0px #000000;
+     align-self: flex-endsssssssssss;
  }
 
  #circle2 {
@@ -321,8 +322,8 @@
  #rightArrow {
      grid-column: 6;
      grid-row: 3/6;
-     padding-top: 9.5vw;
-     padding-left: 6.5vw;
+     padding-top: 5.5vw;
+     padding-left: 7vw;
  }
 
  #star {
