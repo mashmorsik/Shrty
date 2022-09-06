@@ -1,334 +1,276 @@
- body {
-     background-color: #172BE3;
- }
+body {
+    background-color: #172BE3;
+}
 
- .grid-container {
-     display: grid;
-     grid-template-columns: repeat(8, 1fr);
-     grid-template-rows: repeat(auto-fill, 50px) 150px;
+input,
+button,
+.QR {
+    font-family: 'SourceCodePro';
+    font-size: 16px;
+    box-shadow: 4px 4px 0px #000000;
+    border: 3px solid #000000;
+    border-radius: 20px;
+    outline: none;
+}
 
-     grid-column-gap: 30px;
-     margin: 0 5vw 0;
- }
+.input-submit:hover {
+    background-color: #FB1826;
+}
 
- header {
-     /* Shrty */
+header,
+h1 {
+    font-family: 'Play';
+    font-size: 34px;
+    -webkit-text-stroke: 1px black;
+}
 
-     grid-column: 1;
-     grid-row: 1;
-     padding-top: 20px;
+button {
+    cursor: pointer;
+}
 
-     font-family: 'Play';
-     font-style: normal;
-     font-weight: 700;
-     font-size: 36px;
-     line-height: 42px;
-
-     color: #18FBA9;
-
-     -webkit-text-stroke: 1px black;
-     text-shadow: 2px 2px 0px #000000;
- }
-
- h1 {
-     /* Shorten your path. */
-
-     grid-column: 4/6;
-     grid-row: 2;
-     text-align: center;
-
-     font-family: 'Play';
-     font-style: normal;
-     font-weight: 700;
-     font-size: 34px;
-     line-height: 39px;
-     padding-top: 0vw;
-
-     color: #FDAD11;
-
-     -webkit-text-stroke: 1px black;
-     text-shadow: 4px 4px 0px #000000;
- } 
- .input-bar {
+.grid-container {
     display: grid;
-    box-sizing: border-box;
-
-    grid-column: 3/6;
-    grid-row: 3;
- }
-
- .input-container {
-    display: flex;
-    grid-column: 2fr 1fr;
-    height: 48px;
-    padding-top: 0vw;
-    gap: 2vw;
- }
-
- .input-text {
-    box-sizing: border-box;
-
-    grid-column: 3/6;
-    grid-row: 3;
-    width: 469px;
-    height: 48px;
-
-    background: #FFFDFD;
-    border: 3px solid #000000;
-    box-shadow: 4px 4px 0px #000000;
-    border-radius: 20px;
-
-    /* Your link */
-
-    grid-column: 3/6;
-    grid-row: 3;
-    
-    font-family: 'Source Code Pro';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 20px;
-
-    color: rgba(0, 0, 0, 0.5);
-    padding-left: 1.2vw;
+    grid-template-columns: repeat(8, 136px);
+    grid-template-rows: repeat(3, 300px);
+    grid-row-gap: 48px;
+    grid-column-gap: 30px;
+    margin: 0 70px;
 }
 
-.input-submit {
-    box-sizing: border-box;
-    grid-column: 6;
-    grid-row: 3;
-
-    width: 136px;
-    height: 48px;
-
-    background: #FDAD11;
-    border: 3px solid #000000;
-    box-shadow: 4px 4px 0px #000000;
-    border-radius: 20px;
-
-    /* Shorten URL */
-
-    grid-column: 6;
-    grid-row: 3;
-  
-    font-family: 'Source Code Pro';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 20px;
-
-    color: #000000;
-}
- .rectangle1 {
-     box-sizing: border-box;
-
-     grid-column: 2;
-     grid-row: 4;
-
-     width: 136px;
-     height: 79px;
-
-     background: #F955DE;
-     border: 3px solid #000000;
-     box-shadow: 4px 4px 0px #000000;
-     border-radius: 20px;
-
-     /* Your QR will be here */
-
-     font-family: 'Source Code Pro';
-     font-style: normal;
-     font-weight: 800;
-     font-size: 14px;
-     line-height: 18px;
-     text-align: center;
-     padding-top: 5px;
-
-     color: #000000;
- }
-
- .rectangle2 {
-     box-sizing: border-box;
-
-     grid-column: 6;
-     grid-row: 5;
-     align-items: baseline;
-
-     width: 136px;
-     height: 79px;
-
-     background: #F955DE;
-     border: 3px solid #000000;
-     box-shadow: 4px 4px 0px #000000;
-     border-radius: 20px;
-
-     /* Your link will be here */
-
-     font-family: 'Source Code Pro';
-     font-style: normal;
-     font-weight: 800;
-     font-size: 14px;
-     line-height: 18px;
-     text-align: center;
-     padding-top: 5px;
-
-     color: #000000;
- }
-
- .QR {
-
-    box-sizing: border-box;
-
-    grid-column: 4;
-    grid-row: 4;
-    width: 136px;
-    height: 136px;
-    left: 569px;
-    top: 391px;
-
-    background: #FFFDFD;
-    border: 3px solid #000000;
-    box-shadow: 4px 4px 0px #000000;
-    border-radius: 20px;
-    
-
- }
-
- img {
-
-    border-radius: 20px;
-    opacity: 50%;
+@media only screen and (max-width: 1440px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(8, 136px);
+        grid-template-rows: repeat(3, 300px);
+        grid-row-gap: 48px;
+        grid-column-gap: 30px;
+        margin: 0 70px;
     }
 
- .QRinput {
-   
-    box-sizing: border-box;
+}
 
-    grid-column: 4;
-    grid-row: 5;
-    width: 136px;
-    height: 48px;
-    left: 569px;
-    top: 547px;
+@media only screen and (max-width: 992px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(6, 136px);
+        grid-template-rows: repeat(3, 300px);
+        grid-row-gap: 48px;
+        grid-column-gap: 30px;
+        margin: 0 70px;
+    }
 
-    background: #FFFDFD;
-    border: 3px solid #000000;
-    box-shadow: 4px 4px 0px #000000;
-    border-radius: 20px;
+    .circle {
+        width: 60px;
+        height: 60px;
+    }
 
-/* Download QR */
+    h1 {
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+}
 
-    grid-column: 4;
-    grid-row: 5;
-    left: 585px;
-    top: 561px;
+    @media only screen and (max-width: 768px) {
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 90px);
+            grid-template-rows: repeat(3, 300px);
+            grid-row-gap: 48px;
+            grid-column-gap: 30px;
+            margin: 0 70px;
+        }
+    }
 
-    font-family: 'Source Code Pro';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 20px;
+    header {
+        /* Shrty */
 
-    color: #000000;
+        grid-column: 1;
+        grid-row: 1;
+        padding-top: 20px;
 
- }
+        color: #18FBA9;
 
- .shortLink {
-    box-sizing: border-box;
+        text-shadow: 2px 2px 0px #000000;
+    }
 
-    grid-column: 5/7;
-    grid-row: 4;
-    width: 302px;
-    height: 48px;
-    left: 735px;
-    top: 391px;
+    h1 {
+        /* Shorten your path. */
 
-    background: #FFFDFD;
-    border: 3px solid #000000;
-    box-shadow: 4px 4px 0px #000000;
-    border-radius: 20px;
+        grid-column: 4/6;
+        grid-row: 1;
+        align-self: center;
 
-    /* https://shrtlink */
-
-    grid-column: 5/7;
-    grid-row: 4;
-    left: 758px;
-    top: 405px;
-
-    font-family: 'Source Code Pro';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 20px;
-
-    color: rgba(0, 0, 0, 0.5);
-    padding-left: 1.2vw;
-
- }
-
- #circle1 {
-     box-sizing: border-box;
-
-     grid-column: 1;
-     width: 116px;
-     height: 116px;
-     top: 200px;
-     border-radius: 58px;
-
-     background: #FB1826;
-     border: 3px solid #000000;
-     box-shadow: 4px 4px 0px #000000;
-     align-self: flex-endsssssssssss;
- }
-
- #circle2 {
-     box-sizing: border-box;
-
-     grid-column: 3;
-     grid-row: 6;
-     width: 116px;
-     height: 116px;
-     border-radius: 58px;
-
-     background: #FDAD11;
-     border: 3px solid #000000;
-     box-shadow: 4px 4px 0px #000000;
- }
-
- #circle3 {
-     box-sizing: border-box;
-
-     grid-column: 8;
-     grid-row: 4;
-     width: 116px;
-     height: 116px;
-     left: 1234px;
-     top: 384px;
-     border-radius: 58px;
-
-     background: #18FBA9;
-     border: 3px solid #000000;
-     box-shadow: 4px 4px 0px #000000;
- }
-
- #leftArrow {
-     grid-column: 2/4;
-     grid-row: 4/6;
-     padding-left: 4vw;
-     padding-top: 7vw;
- }
-
- #rightArrow {
-     grid-column: 6;
-     grid-row: 3/6;
-     padding-top: 5.5vw;
-     padding-left: 7vw;
- }
-
- #star {
-     grid-column: 6;
-     grid-row: 4/6;
-     padding-left: 5vw;
-     padding-top: 4.5vw;
- }
+        color: #FDAD11;
 
 
+        text-shadow: 4px 4px 0px #000000;
+    }
+
+    .input-text {
+        box-sizing: border-box;
+
+        grid-column: 3/6;
+        grid-row: 1;
+        width: 469px;
+        height: 48px;
+        align-self: end;
+
+        background: #FFFDFD;
+
+        /* Your link */
+
+        padding-left: 16px;
+    }
+
+    .input-submit {
+        box-sizing: border-box;
+        grid-column: 6;
+        grid-row: 1;
+        align-self: end;
+
+        width: 136px;
+        height: 48px;
+
+        background: #FDAD11;
+    }
+
+    .pink {
+        box-sizing: border-box;
+
+        width: 136px;
+        height: 80px;
+
+        background: #F955DE;
+        border: 3px solid #000000;
+        box-shadow: 4px 4px 0px #000000;
+        border-radius: 20px;
+
+        /* Text */
+
+        font-family: 'SourceCodePro';
+        font-size: 14px;
+        text-align: center;
+        padding-top: 5px;
+
+        color: #000000;
+    }
+
+    .rectangleL {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .rectangleR {
+        grid-column: 6;
+        grid-row: 2;
+        margin-top: 156px;
+    }
+
+    .QR {
+
+        box-sizing: border-box;
+
+        grid-column: 4;
+        grid-row: 2;
+        width: 136px;
+        height: 136px;
+
+        background: #FFFDFD;
+    }
+
+    img {
+        border-radius: 20px;
+        opacity: 50%;
+        padding-left: 2px;
+        padding-top: 2px;
+    }
+
+    .QRinput {
+
+        box-sizing: border-box;
+
+        grid-column: 4;
+        grid-row: 2;
+        width: 136px;
+        height: 48px;
+        margin-top: 156px;
+    }
+
+    .shortLink {
+        box-sizing: border-box;
+
+        grid-column: 5/7;
+        grid-row: 2;
+        width: 302px;
+        height: 48px;
+
+        background: #FFFDFD;
+
+        /* https://shrtlink */
+
+        padding-left: 16px;
+    }
+
+    .copyShort {
+        box-sizing: border-box;
+
+        grid-column: 5;
+        grid-row: 2;
+        width: 136px;
+        height: 48px;
+        margin-top: 68px;
+
+        background: #FFFDFD;
+    }
+
+    .circle {
+        box-sizing: border-box;
+
+        width: 116px;
+        height: 116px;
+        border-radius: 58px;
+
+        border: 3px solid #000000;
+        box-shadow: 4px 4px 0px #000000;
+    }
+
+    .red {
+        background-color: #FB1826;
+        grid-column: 1;
+        grid-row: 1;
+        align-self: end;
+    }
+
+    .yellow {
+        background-color: #FDAD11;
+        grid-column: 2;
+        grid-row: 2;
+        align-self: end;
+    }
+
+    .green {
+        background-color: #18FBA9;
+        grid-column: 8;
+        grid-row: 2;
+        align-self: start;
+    }
+
+    #leftArrow {
+        grid-column: 2/3;
+        grid-row: 2;
+        padding-top: 100px;
+        padding-left: 60px;
+    }
+
+    #rightArrow {
+        grid-column: 6/7;
+        grid-row: 2/3;
+        padding-left: 100px;
+    }
+
+    #star {
+        grid-column: 6/7;
+        grid-row: 2;
+        padding-top: 70px;
+        padding-left: 120px;
+    }

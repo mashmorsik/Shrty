@@ -3,10 +3,9 @@
 
 <head>
     <link rel="stylesheet" href="shrtyG.css">
-    <link rel="icon" type="image/png" href="favicon.ico"/>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Play:wght@700&family=Source+Code+Pro:wght@800&display=swap');
-    </style>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ShrtyG</title>
 </head>
 
@@ -14,31 +13,24 @@
     <div class="grid-container">
         <header>Shrty</header>
         <h1>Shorten your path.</h1>
-        <div class="input-bar">
-            <div class="input-container">
-                <input class="input-text" type="text" placeholder="Your link">
-                <button class="input-submit"
-                    onclick="location.href='https://www.google.com/webhp?hl=ru&sa=X&ved=0ahUKEwjfgd_Sueb4AhUrXvEDHa-1AtYQPAgI'"
-                    type="button">
-                    Shorten URL
-                </button>
-            </div>
-        </div>
+        <input id="input-text" class="input-text" type="text" placeholder="Your link">
+        <button class="input-submit" type="button">Shorten URL</button>
         <div class="QR">
             <img src="qr.png">
         </div>
-        <input class="QRinput" type="submit" value="Download QR">
-        <input class="shortLink" value="https://shrtlink">
-        <div class="rectangle1">
+        <button class="QRinput" type="button">Download QR</button>
+        <input class="shortLink" placeholder="https://shrtlink" disabled>
+        <button class="copyShort" type="button">Copy URL</button>
+        <div class="rectangleL pink">
             <p>Your QR <br> will be here</p>
         </div>
-        <div class="rectangle2">
+        <div class="rectangleR pink">
             <p>Your link <br> will be here</p>
         </div>
 
-        <div id="circle1"></div>
-        <div id="circle2"></div>
-        <div id="circle3"></div>
+        <div class="circle red"></div>
+        <div class="circle yellow"></div>
+        <div class="circle green"></div>
         <div id="leftArrow"><svg width="236" height="76" viewBox="0 0 236 76" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -46,14 +38,14 @@
                     fill="black" />
             </svg>
         </div>
-        <div id="rightArrow"><svg width="199" height="266" viewBox="0 0 199 266" fill="none"
+        <div id="rightArrow"><svg width="180" height="250" viewBox="0 0 180 250" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M72.2502 36.1834C71.1485 36.4031 70.3888 37.4509 70.5534 38.5237L73.2364 56.006C73.4011 57.0788 74.4277 57.7704 75.5294 57.5507C76.6312 57.3311 77.3909 56.2833 77.2262 55.2105L74.8413 39.6706L90.8006 36.4884C91.9024 36.2687 92.6621 35.221 92.4974 34.1481C92.3328 33.0753 91.3061 32.3838 90.2044 32.6034L72.2502 36.1834ZM75.9916 239.531C123.505 216.117 145.559 180.389 144.18 142.741C142.808 105.254 118.219 66.429 73.7481 36.4711L71.3485 39.7807C115.198 69.3204 138.834 107.196 140.149 143.096C141.457 178.834 120.659 213.179 74.3412 236.005L75.9916 239.531Z"
                     fill="black" />
             </svg>
         </div>
-        <div id="star"><svg width="75" height="70" viewBox="0 0 75 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div id="star"><svg width="65" height="60" viewBox="0 0 75 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_59_37)">
                     <path
                         d="M36.5 0L44.9193 25.9119H72.1646L50.1227 41.9263L58.5419 67.8381L36.5 51.8237L14.4581 67.8381L22.8773 41.9263L0.835381 25.9119H28.0807L36.5 0Z"
@@ -78,6 +70,8 @@
             </svg>
         </div>
     </div>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
