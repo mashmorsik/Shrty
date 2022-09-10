@@ -22,7 +22,7 @@ input,
 button,
 .QR {
     font-family: 'SourceCodePro';
-    font-size: 16px;
+    font-size: 14px;
     box-shadow: 4px 4px 0px #000000;
     border: 3px solid #000000;
     border-radius: 15px;
@@ -63,7 +63,7 @@ h1 {
     color: #FDAD11;
     grid-row: 1;
     grid-column: 1/5;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     align-self: end;
     margin: 0;
