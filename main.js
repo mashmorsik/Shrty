@@ -35,6 +35,14 @@ async function postRequest() {
 
 shortenBtn.addEventListener('click', postRequest)
 
+async function returnLong() {
+    const r = await axios.get('https://e7ast1c-shrty.herokuapp.com/expand?hash=zgDN');
+    const shortUrl = r.config.transitional.url
+    if(window.location = shortUrl) {
+        window.location.assign(r)
+    }
+}
+
 function copyUrl() {
     const range = document.createRange();
     range.selectNode(document.getElementById('output-link'));
@@ -45,28 +53,6 @@ function copyUrl() {
 }
 
 copyBtn.addEventListener('click', copyUrl)
-
-// function generateQR() {
-//     let img = document.querySelector('img')
-//     img.remove()
-//     downloadBtn.style.background = "#18FBA9"
-//     copyBtn.style.background = "#18FBA9"
-//     let inputLink = document.querySelector('#input-link').value
-//     if (inputLink) {
-//         let qrCodeContainer = document.querySelector('#QR-new');
-//         qrCodeContainer.innerHTML = "";
-//         new QRCode(qrCodeContainer, {
-//             text: inputLink,
-//             width: 110,
-//             height: 110,
-//             colorDark: "#000000",
-//             colorLight: "#FFFFFF",
-//             correctLevel: QRCode.CorrectLevel.H
-//         })
-//     } else {
-//         return false
-//     }
-// }
 
 function generateQR() {
     let img = document.querySelector('img')
@@ -90,3 +76,12 @@ function generateQR() {
 }
 
 shortenBtn.addEventListener('click', generateQR)
+
+downloadBtn.addEventListener('click', () => {
+    let qrcode = document.querySelector('#QR-new img')
+    let dlink = document.querySelector('#qrdl')
+    let qr = qrcode.getAttribute('src');
+    dlink.setAttribute('href', qr);
+    dlink.setAttribute('download', 'QR');
+    dlink.removeAttribute('hidden');
+})
