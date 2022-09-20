@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="shrtyG.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Shrty</title>
 </head>
 
@@ -15,10 +16,12 @@
         <header>Shrty</header>
         <h1>Shorten your path.</h1>
 
-        <input id="input-link" class="input-link" type="text" placeholder="Your link">
+        <input id="input-link" class="input-link" type="search" placeholder="Your link">
         <button id="input-submit" class="input-submit" type="button">Shorten URL</button>
 
-        
+        <div class="tooltip copied hidden"><span class="tooltiptext">URL copied!</span></div>
+        <div class="tooltip invalid hidden"><span class="tooltiptext">Enter a valid URL!</span></div>
+
         <div id="output-link" contenteditable="true" data-placeholder="https://shrtlink"></div>
         <button class="copy-short" type="button">Copy URL</button>
 

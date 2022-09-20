@@ -3,6 +3,8 @@ const input = document.querySelector('#input-link')
 const shortenBtn = document.querySelector('.input-submit')
 const copyBtn = document.querySelector('.copy-short')
 const downloadBtn = document.querySelector('.copy-QR')
+const tooltipCopied = document.querySelector('.copied')
+const tooltipInvalid = document.querySelector('.invalid')
 
 function validateUrl() {
     const inputString = input.value
@@ -10,7 +12,13 @@ function validateUrl() {
     if (!!urlPattern.test(inputString) === true) {
         document.querySelector('.input-submit').classList.add('yellow')
     } else {
-        return false
+        shortenBtn.classList.add('red')
+        copyBtn.removeEventListener
+        downloadBtn.removeEventListener
+    }
+    if (inputString.length === 0) {
+        shortenBtn.classList.remove('red')
+        shortenBtn.classList.remove('yellow')
     }
 }
 
@@ -38,18 +46,22 @@ shortenBtn.addEventListener('click', postRequest)
 async function returnLong() {
     const r = await axios.get('https://e7ast1c-shrty.herokuapp.com/expand?hash=zgDN');
     const shortUrl = r.config.transitional.url
-    if(window.location = shortUrl) {
+    if (window.location = shortUrl) {
         window.location.assign(r)
     }
 }
 
 function copyUrl() {
-    const range = document.createRange();
-    range.selectNode(document.getElementById('output-link'));
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand('copy');
-    window.getSelection().removeAllRanges();
+    if (document.querySelector('#output-link').innerHTML != "") {
+        const range = document.createRange();
+        range.selectNode(document.getElementById('output-link'));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        tooltipCopied.classList.remove('hidden');
+        setTimeout(() => tooltipCopied.classList.add('hidden'), 1000)
+    }
 }
 
 copyBtn.addEventListener('click', copyUrl)
