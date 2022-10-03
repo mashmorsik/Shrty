@@ -24,31 +24,28 @@ function validateUrl() {
 
 input.addEventListener('input', validateUrl)
 
-async function getRequest() {
-    const r = await axios.get('https://e7ast1c-shrty.herokuapp.com/expand?hash=zgDN');
-    console.log(r)
+onMountUrlCheck()
+async function onMountUrlCheck() {
+    if(window.location.pathname.indexOf('/') == 0 && window.location.pathname.length > 1) {
+        await returnLong(window.location.pathname.replace("/",""))
+    }
 }
-
-getRequest()
 
 async function postRequest() {
     const r = await axios.post('https://e7ast1c-shrty.herokuapp.com/shorten', {
         "url": input.value
     })
     if (r && r.data && r.data.url) {
-        document.querySelector('#output-link').innerHTML = "http://" + r.data.url
+        document.querySelector('#output-link').innerHTML = window.location.origin + "/" + r.data.url
     }
     console.log(r.data.url)
 }
 
 shortenBtn.addEventListener('click', postRequest)
 
-async function returnLong() {
-    const r = await axios.get('https://e7ast1c-shrty.herokuapp.com/expand?hash=zgDN');
-    const shortUrl = r.config.transitional.url
-    if (window.location = shortUrl) {
-        window.location.assign(r)
-    }
+async function returnLong(hash) {
+    const res = await axios.get(`https://e7ast1c-shrty.herokuapp.com/expand?hash=${hash}`);
+    window.location.assign(res.data.url)
 }
 
 function copyUrl() {
