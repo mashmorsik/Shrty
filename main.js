@@ -26,7 +26,8 @@ input.addEventListener('input', validateUrl)
 
 onMountUrlCheck()
 async function onMountUrlCheck() {
-    if(window.location.pathname.indexOf('/') == 0 && window.location.pathname.length > 1) {
+    const re = /^[0-9A-Za-z\/]{4,100}$/gm
+    if(window.location.pathname.indexOf('/') == 0 && window.location.pathname.length > 1 && window.location.pathname.match(re)) {
         await returnLong(window.location.pathname.replace("/",""))
     }
 }
